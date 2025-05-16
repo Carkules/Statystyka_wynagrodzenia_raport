@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools,amsthm,amssymb,icomma,upgreek,xfrac}
+\mathtoolsset{showonlyrefs,mathic}
+
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage[condensed,math]{}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks,breaklinks,pdfusetitle,pdfdisplaydoctitle]{hyperref}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{minted}
+
+\begin{document}
+	\begin{center}
+		\begin{LARGE}
+			\textbf{Raport}
+		\end{LARGE}
+	\end{center}
+\newpage
+\section{Metryki statystyczne}
+	\subsection{Miary położenia}
+		\subsubsection{Średnia arytmetyczna}
+			\[
+				\overline{x} = \frac{1}{n} \sum_{i=1}^{n}x_i
+			\]
+		\subsubsection{Średnia harmoniczna}
+			\[
+				H = \frac{n}{\sum\limits_{i=1}^{n}\frac{1}{x_i}}
+			\]
+		\subsubsection{Średnia geometryczna}
+			\[
+				G = \sqrt[n]{\prod_{i=1}^{n}x_i}
+			\]
+		\subsubsection{Średnia ucinana}
+			\[
+				\frac{1}{n-2k}\sum_{i=k+1}^{n-k}x_i
+			\]
+		\subsubsection{Średnia winsorowska}
+			\[
+				\frac{1}{n}\left[(k+1)x_{k+1} + \sum_{i=k+2}^{n-k-1}x_i + (k+1)x_{n-k} \right]
+			\]
+		\subsubsection{Mediana}
+	\subsection{Miary rozproszone}
+		\subsubsection{Rozstęp z próby}
+			\[
+				R = x_n - x_1
+			\]
+		\subsubsection{Wariancja z próby}
+			\[
+				s^2 = \frac{1}{n-1} \sum_{i=1}^{n}(x_i - \overline{x})^2
+			\]
+		\subsubsection{Odchylenie standardowe z próby}
+			\[
+				s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n}(x_i - \overline{x})^2}
+			\]
+		\subsubsection{Odchylenie przeciętne od wartości średniej}
+			\[
+				d_1 = \frac{1}{n} \sum_{i=1}^{n}|x_i-\overline{x}|
+			\]
+		\subsubsection{Współczynnik zmienności}
+			\[
+				\nu = \frac{s}{\overline{x}}\cdot 100\%
+			\]
+	\subsection{Miary asymetrii i spłaszczenia}
+		\subsubsection{Współczynnik skośności}
+			\[
+				\alpha = \frac{n}{(n-1)(n-2)}\sum_{i=1}^{n}\left(\frac{x_i-\overline{x}}{s}\right)^3
+			\]
+		\subsubsection{Kurtoza}
+			\[
+				K = \frac{n-1}{(n-2)(n-3)}((n+1)K_1-3(n-1)) + 3
+			\]
+			gdzie
+			\[
+				K_1 = \frac{\frac{1}{n}\sum\limits_{i=1}^{n}(x_i-\overline{x})^4}{\left(\frac{1}{n}\sum\limits_{i=1}^{n}(x_i-\overline{x})^2\right)^4}
+			\]
+\end{document}
